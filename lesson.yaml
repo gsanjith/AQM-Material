@@ -1,0 +1,85 @@
+- Class: meta
+  Course: Applied Quantitative Methods
+  Lesson: Getting Started with Simple Linear Regression  
+  Author: Sanjith Gopalakrishnan
+  Type: Standard
+  Organization: AQM
+  Version: 2.4.2
+
+- Class: text
+  Output: Welcome to the lesson in Linear Regression.
+
+- Class: cmd_question
+  Output: The library() function is used to load libraries which are groups of functions and datasets. The MASS library is a useful large collection of datasets. Load the MASS library. 
+  CorrectAnswer: library(MASS)
+  AnswerTests: omnitest(correctExpr='library(MASS)')
+  Hint: Load the MASS library using library()
+
+- Class: text
+  Output: We will be working on the Boston data set in the MASS library, which records the median housevalue (medv) for 506 neighbourhoods of Boston, along with 13 predictor variables. 
+
+- Class: cmd_question
+  Output: Load the Boston dataset into housing.  
+  CorrectAnswer: housing <- Boston
+  AnswerTests: omnitest(correctExpr='housing <- Boston')
+  Hint: Use <- to load the Boston data set
+  
+- Class: text
+  Output: The first thing one should always do after loading data is to make sure it loaded as expected. We do this by looking at various parts of the data using certain R functions.
+  
+  
+
+- Class: cmd_question
+  Output: The head() function lets you see the first few rows. Use head() to see the first few rows on the newly loaded housing data set. 
+  CorrectAnswer: head(housing)
+  AnswerTests: omnitest(correctExpr='head(housing)')
+  Hint: head(housing) will perform the required function. 
+
+- Class: text
+  Output: Another useful operation is to see the size or the dimensions of the data set. 
+
+- Class: cmd_question
+  Output: Use dim() to see the dimensions of the housing dataset. 
+  CorrectAnswer: dim(housing)
+  AnswerTests: omnitest(correctExpr='dim(housing)')
+  Hint: Try again 
+
+- Class: text
+  Output: To find out more about the data set, we can type ?Boston. 
+
+- Class: cmd_question
+  Output: Try it and pay attention to nox and lstat headers. 
+  CorrectAnswer: ?Boston
+  AnswerTests: omnitest(correctExpr='?Boston')
+  Hint: Try again. 
+
+- Class: cmd_question
+  Output: Use attach() to attach the housing data set so R knows where to look in when we perform the subsequent operations. 
+  CorrectAnswer: attach(housing)
+  AnswerTests: omnitest(correctExpr='attach(housing)')
+  Hint: Try again. 
+
+- Class: text
+  Output: Let us now fit a simple linear regression model with medv as the response and lstat as the predictor. 
+
+- Class: text
+  Output: The syntax to perform a linear regression is lm(y~x) where y is the response variable and x is the predictor. It is important to attach the dataset before running the regression. Else, R will not know where to look for the variables x and y.
+
+
+- Class: cmd_question
+  Output: Use lm to run a regression on median value (medv) as the response and lstat as the predictor and store it in reg.
+  CorrectAnswer: reg <- lm(medv~lstat)
+  AnswerTests: omnitest(correctExpr='reg <- lm(medv~lstat)')
+  Hint: reg <- ...
+
+- Class: cmd_question
+  Output: For detailed information on the regression fit, we can use summary(reg). Try it. 
+  CorrectAnswer: summary(reg)
+  AnswerTests: omnitest(correctExpr='summary(reg)')
+  Hint: Try again!
+
+- Class: cmd_question
+  Output: We would like to also derive confidence intervals on the coefficient estimates. Use the confint() command.
+  CorrectAnswer: confint(reg)
+  AnswerTests: omnitest(correctExpr='confint(reg)')
+  Hint: Try again!
