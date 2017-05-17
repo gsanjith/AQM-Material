@@ -5,9 +5,9 @@ library(dplyr)
 
 #TOPIC DISTRIBUTIONS 
 
-set.seed(2015) # for reproducibility
+set.seed(2017) # for reproducibility
 
-alpha = .1
+alpha = 0.1
 N = 1
 K = 10
 x = rdirichlet(N, rep(alpha, K)) %>% as.numeric()
